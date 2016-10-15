@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
+    title
+      | KindleEditionChecker
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    link[rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"]
+    link[rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-pink.min.css"]
+    script[defer src="https://code.getmdl.io/1.2.1/material.min.js"]
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
+
+  body
+    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      header.mdl-layout__header
+        .mdl-layout__header-row
+          span.mdl-layout-title
+            | KindleEditionChecker
+          .mdl-layout-spacer
+          nav.mdl-navigation
+            = link_to 'Home', root_path, class: 'mdl-navigation__link'
+            = link_to 'Logout', logout_path, class: 'mdl-navigation__link'
+      main.mdl-layout__content
+        .mdl-grid
+          .mdl-layout-spacer
+          .mdl-cell--8-col
+            = yield
+          .mdl-layout-spacer

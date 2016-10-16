@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20161015053430) do
     t.string   "isbn_10"
     t.boolean  "has_kindle_edition"
     t.integer  "user_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.date     "kindle_edition_release_date"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["user_id"], name: "index_books_on_user_id", using: :btree
   end
 

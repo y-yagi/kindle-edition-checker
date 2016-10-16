@@ -5,6 +5,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.string :isbn_10, null: :false
       t.boolean :has_kindle_edition
       t.belongs_to :user, foreign_key: true
+      t.date :kindle_edition_release_date
 
       t.timestamps
     end

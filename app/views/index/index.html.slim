@@ -1,0 +1,14 @@
+.mdl-typography
+  h2.logo-font
+    | Welcome to Kindle Edition Checker
+  h5.logo-font
+    | Kindle Edition Checkerは欲しい本のKindle版が出たら通知をしてくれるサービスです。
+
+  a.google[href="/auth/google_oauth2", class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"]
+    | Login with Google Account
+  - if Rails.env.development?
+    hr
+    a.google[href="/auth/developer", class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"]
+      | Log in with develop
+
+

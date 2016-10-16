@@ -1,9 +1,7 @@
-h1
-  | Welcome!!
+h2.logo-font
+  | Login
 
 - if Rails.env.development?
-  a.google[href="/auth/developer"]
+  hr
+  a.google[href="/auth/developer", class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"]
     | Log in with develop
-  br
-a.google[href="/auth/google_oauth2"]
-  | Log in with Google

@@ -9,6 +9,16 @@ class Book < ApplicationRecord
       book.user = current_user
       book
     end
+
+    def set_kindle_edition_info!
+      Book.where(has_kindle_edition: false).find_each do |book|
+        begin
+          book.set_kindle_edition_info!
+        rescue => e
+          Rails.logger.erro(e)
+        end
+      end
+    end
   end
 
   def amazon_url

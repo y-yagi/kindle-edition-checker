@@ -8,6 +8,7 @@ table.mdl-data-table.mdl-data-table--selectable.mdl-shadow--2dp
       th.mdl-data-table__cell--non-numeric = attributes_t('book.title')
       th.mdl-data-table__cell--non-numeric = attributes_t('book.isbn_10')
       th.mdl-data-table__cell--non-numeric = attributes_t('book.has_kindle_edition')
+      th.mdl-data-table__cell--non-numeric = attributes_t('book.kindle_edition_release_date')
       th.mdl-data-table__cell--non-numeric amazon
       th
 
@@ -19,5 +20,6 @@ table.mdl-data-table.mdl-data-table--selectable.mdl-shadow--2dp
         td
           i.material-icons.md-dark
             = book.has_kindle_edition_icon
+        td = book.kindle_edition_release_date
         td = link_to 'Amazonへのリンク', book.amazon_url, target: '_blank'
         td = link_to '削除', book, data: { confirm: '本当によろしいですか?' }, method: :delete

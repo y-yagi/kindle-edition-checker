@@ -1,15 +1,17 @@
-h4 登録した本の一覧
+h4.logo-font 登録した本の一覧
 
-= link_to '本を登録', new_book_path
+= link_to '登録', new_book_path, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'
 
-table.mdl-data-table.mdl-data-table--selectable.mdl-shadow--2dp
+hr
+
+table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
   thead
     tr
       th.mdl-data-table__cell--non-numeric = attributes_t('book.title')
       th.mdl-data-table__cell--non-numeric = attributes_t('book.isbn_10')
       th.mdl-data-table__cell--non-numeric = attributes_t('book.has_kindle_edition')
       th.mdl-data-table__cell--non-numeric = attributes_t('book.kindle_edition_release_date')
-      th.mdl-data-table__cell--non-numeric amazon
+      th.mdl-data-table__cell--non-numeric Amazonの書籍ページへのリンク
       th
 
   tbody
@@ -21,5 +23,5 @@ table.mdl-data-table.mdl-data-table--selectable.mdl-shadow--2dp
           i.material-icons.md-dark
             = book.has_kindle_edition_icon
         td = book.kindle_edition_release_date
-        td = link_to 'Amazonへのリンク', book.amazon_url, target: '_blank'
+        td = link_to book.title, book.amazon_url, target: '_blank'
         td = link_to '削除', book, data: { confirm: '本当によろしいですか?' }, method: :delete

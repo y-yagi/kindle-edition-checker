@@ -6,6 +6,13 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      book: 本
+    attributes:
+      book:
+        title: タイトル
+        isbn_10: ISBN-10
+        has_kindle_edition: Kindle版
   date:
     abbr_day_names:
     - 日
@@ -198,12 +205,3 @@ ja:
       default: "%m/%d %H:%M"
       long: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
     pm: 午後
-
-  activerecord:
-    models:
-      book: 本
-    attributes:
-      book:
-        title: タイトル
-        isbn_10: ISBN-10
-        has_kindle_edition: Kindle版

@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/y-yagi/slim-rails.git
+  revision: 2b69604d381bc921623149953efaca81fe84992d
+  branch: make_work_with_sprockets_4
+  specs:
+    slim-rails (3.1.1)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      slim (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -151,7 +161,7 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
-    rollbar (2.13.2)
+    rollbar (2.13.3)
       multi_json
     ruby-hmac (0.4.0)
     sass (3.4.22)
@@ -164,16 +174,12 @@ GEM
     slim (3.0.7)
       temple (~> 0.7.6)
       tilt (>= 1.3.3, < 2.1)
-    slim-rails (3.1.1)
-      actionpack (>= 3.1)
-      railties (>= 3.1)
-      slim (~> 3.0)
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
-    sprockets (3.7.0)
+    sprockets (4.0.0.beta4)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.2.0)
@@ -220,9 +226,10 @@ DEPENDENCIES
   rails (~> 5.0.0, >= 5.0.0.1)
   rollbar
   sass-rails (~> 5.0)
-  slim-rails
+  slim-rails!
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets (~> 4.x)
   turbolinks (~> 5)
   uglifier (>= 1.3.0)
   web-console

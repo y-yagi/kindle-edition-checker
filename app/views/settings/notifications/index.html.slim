@@ -2,6 +2,9 @@ h4.logo-font Notification Settings
 
 h5 Email
 
+h6
+  = "登録されているEmailは #{@user.email} です"
+
 = form_for @user, url: settings_notifications_url do |f|
   - if @user.errors.any?
     ul

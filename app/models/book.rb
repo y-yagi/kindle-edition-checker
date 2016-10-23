@@ -13,7 +13,7 @@ class Book < ApplicationRecord
     end
 
     def set_kindle_edition_info!
-      Book.where(has_kindle_edition: false).find_each do |book|
+      Book.where(has_kindle_edition: nil).find_each do |book|
         begin
           book.set_kindle_edition_info!
         rescue => e

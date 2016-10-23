@@ -1,0 +1,7 @@
+下記書籍のKindle版がamazonに登録されたのでお知らせします。
+
+<% @books.each do |book| %>
+  <%= "#{book.title}  発売日: #{book.kindle_edition_release_date}" %>
+  <%= book.amazon_url %>
+
+<% end %>

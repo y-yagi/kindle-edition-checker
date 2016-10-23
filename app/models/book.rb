@@ -3,6 +3,8 @@ class Book < ApplicationRecord
   validates :isbn_10, presence: true, length: { is: 10 }
   validate :check_isbn_and_set_title
 
+  scope :unnotified, -> { where(has_kindle_edition: true, notified: false) }
+
   class << self
     def build(params, current_user)
       book = Book.new(params)

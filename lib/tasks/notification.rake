@@ -5,6 +5,7 @@ namespace :notification do
 
     users.each do |user|
       UserMailer.kindle_notification(user, user.books.unnotified).deliver_now
+      user.books.update_all(notified: true)
     end
   end
 end

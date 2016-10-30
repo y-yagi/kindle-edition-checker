@@ -10,12 +10,12 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('push', function(event) {
-  var title = 'Push message';
+  var title = 'Kindle Edition Checker';
 
   // TODO: adjust body, icon, title
   event.waitUntil(
     self.registration.showNotification(title, {
-     body: 'The Message',
+     body: 'Kindle版が登録された書籍があります',
      icon: 'images/icon.png'
    }));
 });

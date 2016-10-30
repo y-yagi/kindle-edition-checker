@@ -1,17 +1,21 @@
 h4.logo-font Notification Settings
 
-h5 Email
-
-h6
-  = "登録されているEmailは #{@user.email} です"
-
 = form_for @user, url: settings_notifications_url do |f|
   - if @user.errors.any?
     ul
       - @user.errors.full_messages.each do |message|
         li = message
 
-  = f.check_box :email_notification
-  = f.label :email_notification
+  h5 Chrome
+  = f.check_box :chrome_notification
+  = f.label :chrome_notification
+
+  - if Rails.env.development?
+    h5 Email
+
+    h6
+      = "登録されているEmailは #{@user.email} です"
+    = f.check_box :email_notification
+    = f.label :email_notification
   hr
   .actions = f.submit class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'

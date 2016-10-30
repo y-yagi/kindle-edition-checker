@@ -5,7 +5,7 @@ if ('serviceWorker' in navigator) {
     reg.pushManager.subscribe({userVisibleOnly: true}).then(function(sub) {
       var subscriptionId = sub.endpoint.split("/").pop();
       console.log(subscriptionId)
-      $("#user_chrome_subscription_id").val(subscriptionId);
+      $("#user_browser_subscription_id").val(subscriptionId);
     });
   }).catch(function(error) {
     console.log('Service Worker error :', error);

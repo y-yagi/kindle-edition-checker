@@ -6,9 +6,9 @@ h4.logo-font Notification Settings
       - @user.errors.full_messages.each do |message|
         li = message
 
-  h5 Chrome
-  = f.check_box :chrome_notification
-  = f.label :chrome_notification
+  h5 browser
+  = f.check_box :browser_notification
+  = f.label :browser_notification
 
   - if Rails.env.development?
     h5 Email
@@ -17,6 +17,6 @@ h4.logo-font Notification Settings
       = "登録されているEmailは #{@user.email} です"
     = f.check_box :email_notification
     = f.label :email_notification
-  = f.hidden_field :chrome_subscription_id
+  = f.hidden_field :browser_subscription_id
   hr
   .actions = f.submit class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'

@@ -28,14 +28,14 @@ ActiveRecord::Schema.define(version: 20161030062024) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "uid",                                    null: false
-    t.string   "provider",                               null: false
+    t.string   "uid",                                     null: false
+    t.string   "provider",                                null: false
     t.string   "email"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.boolean  "email_notification",     default: false
-    t.boolean  "chrome_notification",    default: false
-    t.string   "chrome_subscription_id"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.boolean  "email_notification",      default: false
+    t.boolean  "browser_notification",    default: false
+    t.string   "browser_subscription_id"
   end
 
   add_foreign_key "books", "users"

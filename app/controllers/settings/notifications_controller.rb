@@ -19,6 +19,6 @@ class Settings::NotificationsController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:email_notification, :chrome_notification, :chrome_subscription_id)
+      params.require(:user).permit(:email_notification, :browser_notification, :browser_subscription_id)
     end
 end

@@ -16,7 +16,11 @@ namespace :notification do
 
     users.each do |user|
       response = firebase.send([user.browser_subscription_id])
-      # TODO: need to check response
+      if response[:response] == 'success'
+        user.books.update_all(notified: true)
+      else
+        Rollbar.error(response)
+      end
     end
   end
 end

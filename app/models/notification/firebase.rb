@@ -1,5 +1,5 @@
 class Notification::Firebase
-  def new
+  def initialize
     @fcm = FCM.new(Rails.application.secrets.fcm_server_key)
   end
 

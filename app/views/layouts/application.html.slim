@@ -5,10 +5,13 @@ html
     title
       | KindleEditionChecker
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    link[rel="manifest" href="/manifest.json"]
     link[rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"]
     link[rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue-pink.min.css"]
     script[defer src="https://code.getmdl.io/1.2.1/material.min.js"]
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    - if controller_path == 'settings/notifications'
+      = javascript_include_tag 'settings', 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
 
   body

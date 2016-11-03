@@ -16,6 +16,7 @@ ja:
         kindle_edition_release_date: Kindle版発売日
       user:
         email_notification: Emailによる通知
+        browser_notification: Browserからの通知
   date:
     abbr_day_names:
     - 日

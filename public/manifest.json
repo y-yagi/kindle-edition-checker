@@ -1,4 +1,13 @@
 {
   "name": "Kindle Edition Checker",
-  "gcm_sender_id": "360023013400"
+  "gcm_sender_id": "360023013400",
+  "short_name": "Kindle Checker",
+  "icons": [{
+        "src": "/icon_128.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      }],
+  "start_url": "https://kindle-edition-checker.herokuapp.com/",
+  "display": "standalone"
+}
 }

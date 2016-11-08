@@ -4,3 +4,8 @@
     color: #767777;
     font-weight: 500;
 }
+
+.scroll-box {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}

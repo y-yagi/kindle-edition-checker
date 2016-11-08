@@ -21,11 +21,14 @@ html
           span.mdl-layout-title
             | KindleEditionChecker
           .mdl-layout-spacer
-          - if logged_in?
-            nav.mdl-navigation
-              = link_to 'Home', books_url, class: 'mdl-navigation__link'
-              = link_to 'Settings', settings_notifications_url, class: 'mdl-navigation__link'
-              = link_to 'Logout', logout_url, class: 'mdl-navigation__link'
+      - if logged_in?
+        .mdl-layout__drawer
+          span.mdl-layout-title
+            | menu
+          nav.mdl-navigation
+            = link_to 'Home', books_url, class: 'mdl-navigation__link'
+            = link_to 'Settings', settings_notifications_url, class: 'mdl-navigation__link'
+            = link_to 'Logout', logout_url, class: 'mdl-navigation__link'
       main.mdl-layout__content
         .mdl-grid
           .mdl-layout-spacer

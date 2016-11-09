@@ -16,6 +16,6 @@ self.addEventListener('push', function(event) {
   event.waitUntil(
     self.registration.showNotification(title, {
      body: 'Kindle版が登録された書籍があります',
-     icon: 'images/icon.png'
+     icon: 'icon.png'
    }));
 });

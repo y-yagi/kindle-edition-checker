@@ -13,7 +13,7 @@ class BooksController < ApplicationController
     @book = Book.build(book_params, current_user)
 
     if @book.save
-      redirect_to books_url, notice: 'Book was successfully created.'
+      redirect_to books_url, notice: "「#{@book.title}」を登録しました"
     else
       render :new
     end
@@ -21,7 +21,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to books_url, notice: 'Book was successfully destroyed.'
+    redirect_to books_url, notice: "「#{@book.title}」を削除しました"
   end
 
   private

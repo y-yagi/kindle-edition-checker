@@ -9,18 +9,8 @@ namespace :notification do
     end
   end
 
-  desc "notify by fcm"
-  task fcm: :environment do
-    firebase = Notification::Firebase.new
-    users = User.where(browser_notification: true).includes(:books).references(:books).merge(Book.unnotified)
-
-    users.each do |user|
-      response = firebase.send([user.browser_subscription_id])
-      if response[:response] == 'success'
-        user.books.update_all(notified: true)
-      else
-        Rollbar.error(response)
-      end
-    end
+  desc "notify"
+  task notify: :environment do
+    Notification.send!
   end
 end

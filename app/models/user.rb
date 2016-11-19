@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   validates :pushbullet_api_token, presence: true, if: -> { pushbullet_notification }
 
+  before_save :encrypt_pushbullet_api_token
+
   class << self
     def find_or_create_from_auth_hash(auth)
       find_by(provider: auth['provider'], uid: auth['uid']) || create_with_omniauth!(auth)
@@ -25,13 +27,17 @@ class User < ApplicationRecord
     save! if changed?
   end
 
-  def encrypt_device_token
-    if device_token_changed? && device_token.present?
-      self.device_token = Rails.application.message_verifier(:device_token).generate(device_token)
+  def encrypt_pushbullet_api_token
+    if pushbullet_api_token_changed? && pushbullet_api_token.present?
+      self.pushbullet_api_token = Rails.application.message_verifier(:pushbullet_api_token).generate(pushbullet_api_token)
     end
   end
 
-  def raw_device_token
-    Rails.application.message_verifier(:device_token).verify(device_token)
+  def raw_pushbullet_api_token
+    Rails.application.message_verifier(:pushbullet_api_token).verify(pushbullet_api_token)
+  end
+
+  def maskd_pushbullet_api_token
+    pushbullet_api_token.present? ? '************' : ''
   end
 end

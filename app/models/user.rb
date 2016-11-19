@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :books
 
+  validates :pushbullet_api_token, presence: true, if: -> { pushbullet_notification }
+
   class << self
     def find_or_create_from_auth_hash(auth)
       find_by(provider: auth['provider'], uid: auth['uid']) || create_with_omniauth!(auth)

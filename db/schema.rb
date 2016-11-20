@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030062024) do
+ActiveRecord::Schema.define(version: 20161119225710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20161030062024) do
     t.boolean  "email_notification",      default: false
     t.boolean  "browser_notification",    default: false
     t.string   "browser_subscription_id"
+    t.boolean  "pushbullet_notification", default: false
+    t.string   "pushbullet_api_token"
   end
 
   add_foreign_key "books", "users"

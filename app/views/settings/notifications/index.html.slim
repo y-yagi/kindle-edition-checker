@@ -4,11 +4,19 @@ h4.logo-font Notification Settings
   - if @user.errors.any?
     ul
       - @user.errors.full_messages.each do |message|
-        li = message
+        li.mdl-color-text--accent = message
 
   h5 browser
   = f.check_box :browser_notification
   = f.label :browser_notification
+
+  h5 pushbullet
+  = f.check_box :pushbullet_notification
+  = f.label :pushbullet_notification
+  br
+  .mdl-textfield.mdl-js-textfield
+    = f.label :pushbullet_api_token, class: 'mdl-textfield__label'
+    = f.text_field :pushbullet_api_token, class: 'mdl-textfield__input', value: @user.maskd_pushbullet_api_token
 
   - if Rails.env.development?
     h5 Email

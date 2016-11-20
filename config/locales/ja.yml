@@ -17,6 +17,8 @@ ja:
       user:
         email_notification: Emailによる通知
         browser_notification: Browserからの通知
+        pushbullet_notification: Pushbulletからの通知
+        pushbullet_api_token: アクセストークン
   date:
     abbr_day_names:
     - 日

@@ -25,6 +25,7 @@ gem 'sparkpost_rails'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv-rails'
+  gem 'to_fixture'
 end
 
 group :development do

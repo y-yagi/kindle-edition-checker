@@ -1,11 +1,13 @@
-one:
-  title: MyString
-  isbn_10: MyString
-  has_kindle_edition: false
-  user: one
+has_kindle_edition:
+  title: "スケッチブック 12 (BLADE COMICS)"
+  isbn_10: 4800006198
+  has_kindle_edition: true
+  kindle_edition_release_date: 2016-10-17
+  notified: true
 
-two:
-  title: MyString
-  isbn_10: MyString
-  has_kindle_edition: false
-  user: two
+not_has_kindle_edition:
+  title: "凶器は壊れた黒の叫び (新潮文庫nex)"
+  isbn_10: 4101800804
+  has_kindle_edition:
+  kindle_edition_release_date:
+  notified: false

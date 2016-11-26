@@ -4,3 +4,5 @@ google:
   email: test@google.com
   browser_notification: true
   pushbullet_notification: true
+  pushbullet_api_token: 123
+

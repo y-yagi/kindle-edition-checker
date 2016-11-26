@@ -20,9 +20,9 @@ http_interactions:
       Content-Type:
       - text/html; charset=UTF-8
       Date:
-      - Sat, 26 Nov 2016 00:44:56 GMT
+      - Sat, 26 Nov 2016 00:48:16 GMT
       Expires:
-      - Sat, 26 Nov 2016 00:44:56 GMT
+      - Sat, 26 Nov 2016 00:48:16 GMT
       Cache-Control:
       - private, max-age=0
       X-Content-Type-Options:
@@ -53,6 +53,6 @@ http_interactions:
         <H2>Error 401</H2>
         </BODY>
         </HTML>
-    http_version:
-  recorded_at: Sat, 26 Nov 2016 00:44:56 GMT
+    http_version: 
+  recorded_at: Sat, 26 Nov 2016 00:48:16 GMT
 recorded_with: VCR 3.0.3

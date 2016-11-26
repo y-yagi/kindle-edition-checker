@@ -1,13 +1,19 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+has_kindle_edition:
+  title: "スケッチブック 12 (BLADE COMICS)"
+  isbn_10: 4800006198
+  has_kindle_edition: true
+  kindle_edition_release_date: 2016-10-17
+  notified: false
+  user: google
 
-one:
-  title: MyString
-  isbn_10: MyString
-  has_kindle_edition: false
-  user: one
+not_has_kindle_edition:
+  title: "凶器は壊れた黒の叫び (新潮文庫nex)"
+  isbn_10: 4101800804
+  notified: false
+  user: google
 
-two:
-  title: MyString
-  isbn_10: MyString
-  has_kindle_edition: false
-  user: two
+has_kindle_edition_but_not_set:
+  title: "ひだまりスケッチ (9) (まんがタイムKRコミックス)"
+  isbn_10: 4832247697
+  notified: false
+  user: google

@@ -3,7 +3,7 @@ has_kindle_edition:
   isbn_10: 4800006198
   has_kindle_edition: true
   kindle_edition_release_date: 2016-10-17
-  notified: true
+  notified: false
   user: google
 
 not_has_kindle_edition:

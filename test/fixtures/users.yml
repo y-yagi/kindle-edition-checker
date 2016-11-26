@@ -2,3 +2,5 @@ google:
   uid: 1
   provider: google_oauth2
   email: test@google.com
+  browser_notification: true
+  pushbullet_notification: true

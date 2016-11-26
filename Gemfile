@@ -25,6 +25,7 @@ gem 'sparkpost_rails'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv-rails'
+  gem 'to_fixture'
 end
 
 group :development do
@@ -32,4 +33,10 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'poltergeist'
+  gem 'vcr'
+  gem 'webmock'
 end

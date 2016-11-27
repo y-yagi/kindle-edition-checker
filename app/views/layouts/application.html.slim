@@ -41,9 +41,10 @@ html
 
       - if notice
         javascript:
-          window.onload = function() {
+          window.addEventListener("load",function(eve){
             var notification = document.querySelector('.mdl-js-snackbar');
             if(notification.MaterialSnackbar) {
               notification.MaterialSnackbar.showSnackbar({message: '#{notice}'});
             }
-          };
+          },false);
+

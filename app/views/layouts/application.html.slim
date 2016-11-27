@@ -41,7 +41,7 @@ html
 
       - if notice
         javascript:
-          window.addEventListener("load",function(eve){
+          window.addEventListener("DOMContentLoaded",function(eve){
             var notification = document.querySelector('.mdl-js-snackbar');
             if(notification.MaterialSnackbar) {
               notification.MaterialSnackbar.showSnackbar({message: '#{notice}'});

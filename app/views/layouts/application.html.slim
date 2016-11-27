@@ -43,5 +43,7 @@ html
         javascript:
           window.onload = function() {
             var notification = document.querySelector('.mdl-js-snackbar');
-            notification.MaterialSnackbar.showSnackbar({message: '#{notice}'});
+            if(notification.MaterialSnackbar) {
+              notification.MaterialSnackbar.showSnackbar({message: '#{notice}'});
+            }
           };

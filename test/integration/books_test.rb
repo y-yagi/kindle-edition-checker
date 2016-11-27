@@ -2,7 +2,12 @@ require 'test_helper'
 
 class BooksTest < ActionDispatch::IntegrationTest
   setup do
+    Capybara.current_driver = Capybara.javascript_driver
     login
+  end
+
+  teardown do
+    Capybara.current_driver = Capybara.default_driver
   end
 
   test 'register book' do
@@ -19,13 +24,14 @@ class BooksTest < ActionDispatch::IntegrationTest
 
   test 'destroy book' do
     books_count = users(:google).books.count
-    assert_match 'スケッチブック', page.text
+    assert_match 'ひだまりスケッチ', page.text
 
     page.accept_confirm do
-      first(:link, '削除').click
+      all(:link, '削除').last.click
     end
 
-    assert_match /スケッチブック.*を削除しました/, page.text
+    visit books_path
     assert_equal books_count - 1, users(:google).books.count
+    assert_no_match 'ひだまりスケッチ', page.text
   end
 end

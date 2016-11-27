@@ -20,7 +20,6 @@ class ActionDispatch::IntegrationTest
 
   require 'capybara/poltergeist'
   Capybara.javascript_driver = :poltergeist
-  Capybara.current_driver = Capybara.javascript_driver
 
   def login
     visit '/auth/google_oauth2'

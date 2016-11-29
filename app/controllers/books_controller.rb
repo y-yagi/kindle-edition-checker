@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    @books = current_user.books
+    @books = current_user.books.order(:created_at)
   end
 
   def new

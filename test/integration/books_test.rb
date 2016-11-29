@@ -10,7 +10,7 @@ class BooksTest < ActionDispatch::IntegrationTest
     Capybara.current_driver = Capybara.default_driver
   end
 
-  test 'register book' do
+  test 'mangement book' do
     assert_no_match 'いまさら翼といわれても', page.text
 
     VCR.use_cassette('check_isbn_and_set_title') do
@@ -20,18 +20,12 @@ class BooksTest < ActionDispatch::IntegrationTest
     end
 
     assert_match 'いまさら翼といわれても', page.text
-  end
-
-  test 'destroy book' do
-    books_count = users(:google).books.count
-    assert_match 'ひだまりスケッチ', page.text
 
     page.accept_confirm do
       all(:link, '削除').last.click
     end
 
     visit books_path
-    assert_equal books_count - 1, users(:google).books.count
-    assert_no_match 'ひだまりスケッチ', page.text
+    assert_no_match 'いまさら翼といわれても', page.text
   end
 end

@@ -52,7 +52,7 @@ class Book < ApplicationRecord
     self.has_kindle_edition = true
 
     # NOTE For avoid 503 error.
-    sleep 2
+    sleep 3
 
     asin = alternate_versions.get_element("AlternateVersion/ASIN").get
     item = Amazon::Ecs.item_lookup(asin, { ResponseGroup: 'ItemAttributes,AlternateVersions' })

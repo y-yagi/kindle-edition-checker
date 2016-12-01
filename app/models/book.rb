@@ -17,7 +17,7 @@ class Book < ApplicationRecord
         begin
           book.set_kindle_edition_info!
         rescue => e
-          Rails.logger.erro(e)
+          Rails.logger.error(e)
         end
       end
     end

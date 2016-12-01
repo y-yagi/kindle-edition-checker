@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'active_decorator'
 gem 'amazon-ecs'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '5.0.1.rc1'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'

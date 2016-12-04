@@ -22,10 +22,11 @@ class BookTest < ActiveSupport::TestCase
     assert_equal book.isbn_10, '1234567890'
   end
 
-  test 'set title when saved' do
+  test 'set title and release date when saved' do
     book = Book.new(isbn_10: '4041047617')
     VCR.use_cassette('check_isbn_and_set_title') { book.save! }
     assert_equal 'いまさら翼といわれても', book.title
+    assert_equal Date.parse("2016-11-30"), book.release_date
   end
 
   test 'set_kindle_edition_info set kindle info' do

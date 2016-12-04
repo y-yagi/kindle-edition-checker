@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :user
   validates :isbn_10, presence: true, length: { is: 10 }
-  validate :check_isbn_and_set_title
+  validate :check_isbn_and_set_info
 
   scope :unnotified, -> { where(has_kindle_edition: true, notified: false) }
 
@@ -27,7 +27,7 @@ class Book < ApplicationRecord
     "https://www.amazon.co.jp/dp/#{isbn_10}/"
   end
 
-  def check_isbn_and_set_title
+  def check_isbn_and_set_info
     return unless self.errors[:isbn_10].blank?
     return unless isbn_10_changed?
 
@@ -36,7 +36,9 @@ class Book < ApplicationRecord
       errors.add(:aws, item.error)
       return
     end
+
     self.title = item.get_element('ItemAttributes/Title').get
+    self.release_date = item.get_element("ReleaseDate").get
   end
 
   def set_kindle_edition_info!

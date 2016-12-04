@@ -14,6 +14,7 @@ ja:
         isbn_10: ISBN-10
         has_kindle_edition: Kindle版
         kindle_edition_release_date: Kindle版発売日
+        release_date: 発売日
       user:
         email_notification: Emailによる通知
         browser_notification: Browserからの通知

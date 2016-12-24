@@ -11,6 +11,7 @@ gem 'omniauth-twitter', github: 'y-yagi/omniauth-twitter', branch: 'allow_to_use
 gem 'fcm'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
+gem 'pkg-config'
 gem 'json', '>= 2.0.0'
 gem 'rollbar'
 gem 'ruby-pushbullet', require: 'pushbullet'

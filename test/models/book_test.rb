@@ -1,16 +1,18 @@
 require 'test_helper'
 
 class BookTest < ActiveSupport::TestCase
-  test 'should have the necessary required validators' do
-    book = Book.new
-    assert_not book.valid?
-    assert_equal [:isbn_10], book.errors.keys
-  end
+  sub_test_case('validation') do
+    test 'should have the necessary required validators' do
+      book = Book.new
+      assert_not book.valid?
+      assert_equal [:isbn_10], book.errors.keys
+    end
 
-  test 'validate error when set 11 character in isbn' do
-    book = Book.new(isbn_10: 'a' * 11)
-    assert_not book.valid?
-    assert_includes book.errors.keys, :isbn_10
+    test 'validate error when set 11 character in isbn' do
+      book = Book.new(isbn_10: 'a' * 11)
+      assert_not book.valid?
+      assert_includes book.errors.keys, :isbn_10
+    end
   end
 
   test 'build return Book instance' do

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.3.1"
+
 gem 'active_decorator'
 gem 'amazon-ecs'
 gem 'rails', '5.0.1.rc2'

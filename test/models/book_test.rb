@@ -3,13 +3,13 @@ require 'test_helper'
 class BookTest < ActiveSupport::TestCase
   sub_test_case('validation') do
     test 'should have the necessary required validators' do
-      book = Book.new
+      book = Book.new(user: users(:google))
       assert_not book.valid?
       assert_equal [:isbn_10], book.errors.keys
     end
 
     test 'validate error when set 11 character in isbn' do
-      book = Book.new(isbn_10: 'a' * 11)
+      book = Book.new(isbn_10: 'a' * 11, user: users(:google))
       assert_not book.valid?
       assert_includes book.errors.keys, :isbn_10
     end
@@ -25,7 +25,7 @@ class BookTest < ActiveSupport::TestCase
   end
 
   test 'set title and release date when saved' do
-    book = Book.new(isbn_10: '4041047617')
+    book = Book.new(isbn_10: '4041047617', user: users(:google))
     VCR.use_cassette('check_isbn_and_set_title') { book.save! }
     assert_equal 'いまさら翼といわれても', book.title
     assert_equal Date.parse("2016-11-30"), book.release_date

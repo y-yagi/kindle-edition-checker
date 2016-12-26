@@ -1,16 +1,18 @@
 source 'https://rubygems.org'
 
-ruby "2.3.1"
+ruby "2.4.0"
 
 gem 'active_decorator'
 gem 'amazon-ecs'
 gem 'rails', '5.0.1.rc2'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-gem 'omniauth-twitter'
+gem 'omniauth-twitter', github: 'y-yagi/omniauth-twitter', branch: 'allow_to_use_json_2'
 gem 'fcm'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
+gem 'pkg-config'
+gem 'json', '>= 2.0.0'
 gem 'rollbar'
 gem 'ruby-pushbullet', require: 'pushbullet'
 gem 'sass-rails', '~> 5.0'

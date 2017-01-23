@@ -38,7 +38,7 @@ class Book < ApplicationRecord
     end
 
     self.title = item.get_element('ItemAttributes/Title').get
-    self.release_date = item.get_element("ReleaseDate").get
+    self.release_date = item.get_element("ReleaseDate")&.get || item.get_element("PublicationDate")&.get
   end
 
   def set_kindle_edition_info!

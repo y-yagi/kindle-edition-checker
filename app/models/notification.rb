@@ -19,7 +19,7 @@ class Notification
           Rails.logger.error(e)
           Rollbar.error(e)
         end
-        user.books.update_all(notified: true)
+        user.books.unnotified.update_all(notified: true)
       end
     end
   end

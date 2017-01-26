@@ -199,6 +199,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    retryable (2.0.4)
     rollbar (2.14.0)
       multi_json
     ruby-hmac (0.4.0)
@@ -286,6 +287,7 @@ DEPENDENCIES
   poltergeist
   puma (~> 3.0)
   rails (= 5.0.1.rc2)
+  retryable
   rollbar
   ruby-pushbullet
   sass-rails (~> 5.0)

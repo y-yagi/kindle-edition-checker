@@ -42,7 +42,12 @@ class Book < ApplicationRecord
   end
 
   def set_kindle_edition_info!
-    item = Amazon::Ecs.item_lookup(isbn_10, { ResponseGroup: 'ItemAttributes,AlternateVersions' })
+    item = nil
+
+    Retryable.retryable(tries: 3, on: Amazon::RequestError) do
+      item = Amazon::Ecs.item_lookup(isbn_10, { ResponseGroup: 'ItemAttributes,AlternateVersions' })
+    end
+
     if item.error
       errors.add(:aws, item.error)
       return
@@ -53,11 +58,10 @@ class Book < ApplicationRecord
 
     self.has_kindle_edition = true
 
-    # NOTE For avoid 503 error.
-    sleep 3
-
     asin = alternate_versions.get_element("AlternateVersion/ASIN").get
-    item = Amazon::Ecs.item_lookup(asin, { ResponseGroup: 'ItemAttributes,AlternateVersions' })
+    Retryable.retryable(tries: 3, on: Amazon::RequestError) do
+      item = Amazon::Ecs.item_lookup(asin, { ResponseGroup: 'ItemAttributes,AlternateVersions' })
+    end
     unless item.error
       self.kindle_edition_release_date = item.get_element("ReleaseDate").get
     end

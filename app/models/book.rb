@@ -58,9 +58,6 @@ class Book < ApplicationRecord
 
     self.has_kindle_edition = true
 
-    # NOTE For avoid 503 error.
-    sleep 3
-
     asin = alternate_versions.get_element("AlternateVersion/ASIN").get
     Retryable.retryable(tries: 3, on: Amazon::RequestError) do
       item = Amazon::Ecs.item_lookup(asin, { ResponseGroup: 'ItemAttributes,AlternateVersions' })

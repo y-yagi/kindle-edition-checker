@@ -1,7 +1,4 @@
 h2.logo-font
   | Login
 
-- if Rails.env.development?
-  hr
-  a.google[href="/auth/developer", class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"]
-    | Log in with develop
+= render 'login'

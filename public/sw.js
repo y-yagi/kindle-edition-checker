@@ -19,3 +19,16 @@ self.addEventListener('push', function(event) {
      icon: 'icon.png'
    }));
 });
+
+self.addEventListener('notificationclick', function(event) {
+  event.notification.close()
+  url = "https://kindle-edition-checker.herokuapp.com/"
+
+  event.waitUntil(
+    clients.matchAll({type: 'window'}).then(function() {
+      if(clients.openWindow) {
+        return clients.openWindow(url)
+      }
+    })
+  )
+})

@@ -12,6 +12,8 @@ gem 'fcm'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'pkg-config'
+# TODO: remove under line after 3.5.3 release. Ref: https://github.com/intridea/hashie/pull/402
+gem 'hashie', '3.5.1'
 gem 'json', '>= 2.0.0'
 gem 'rollbar'
 gem 'ruby-pushbullet', require: 'pushbullet'

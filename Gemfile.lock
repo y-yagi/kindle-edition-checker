@@ -268,6 +268,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   dotenv-rails
   fcm
+  hashie (= 3.5.1)
   jbuilder (~> 2.5)
   jquery-rails
   json (>= 2.0.0)

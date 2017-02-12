@@ -31,7 +31,11 @@ class Book < ApplicationRecord
     return unless self.errors[:isbn_10].blank?
     return unless isbn_10_changed?
 
-    item = Amazon::Ecs.item_lookup(isbn_10, { ResponseGroup: 'ItemAttributes,AlternateVersions' })
+    item = nil
+    Retryable.retryable(tries: 3, on: Amazon::RequestError) do
+      item = Amazon::Ecs.item_lookup(isbn_10, { ResponseGroup: 'ItemAttributes,AlternateVersions' })
+    end
+
     if item.error
       errors.add(:aws, item.error)
       return

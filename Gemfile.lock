@@ -125,7 +125,7 @@ GEM
     multipart-post (2.0.0)
     netrc (0.11.0)
     nio4r (2.0.0)
-    nokogiri (1.7.0.1)
+    nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
     oauth (0.5.1)
     oauth2 (1.3.1)
@@ -273,6 +273,7 @@ DEPENDENCIES
   json (>= 2.0.0)
   listen (~> 3.0.5)
   minitest-sub_test_case
+  nokogiri (>= 1.7.1)
   omniauth
   omniauth-google-oauth2
   omniauth-twitter
@@ -299,6 +300,5 @@ DEPENDENCIES
 
 RUBY VERSION
    ruby 2.4.0p-1
-
 BUNDLED WITH
    1.14.3

@@ -46,3 +46,4 @@ group :test do
   gem 'vcr'
   gem 'webmock'
 end
+gem 'nokogiri', '>= 1.7.1'

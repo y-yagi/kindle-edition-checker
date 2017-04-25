@@ -1,4 +1,4 @@
-= form_for @book do |f|
+= form_with(model: @book) do |f|
   - if @book.errors.any?
     ul
       - @book.errors.full_messages.each do |message|
@@ -6,6 +6,6 @@
 
   .mdl-textfield.mdl-js-textfield
     = f.label :isbn_10, class: 'mdl-textfield__label'
-    = f.text_field :isbn_10, class: 'mdl-textfield__input'
+    = f.text_field :isbn_10, class: 'mdl-textfield__input', id: :book_isbn_10
   br
   .actions = f.submit class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'

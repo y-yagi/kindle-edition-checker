@@ -4,7 +4,7 @@ ruby "2.4.0"
 
 gem 'active_decorator'
 gem 'amazon-ecs'
-gem 'rails', '5.1.0.rc2'
+gem 'rails', '5.1.0'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
@@ -24,7 +24,6 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'sparkpost_rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

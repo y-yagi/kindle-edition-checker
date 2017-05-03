@@ -28,4 +28,4 @@ h4.logo-font 登録した本の一覧
                 = book.has_kindle_edition_icon
             td = book.kindle_edition_release_date
             td = link_to book.title, book.amazon_url, target: '_blank'
-            td = link_to '削除', book, data: { confirm: '本当によろしいですか?' }, method: :delete
+            td = link_to '削除', book, data: { confirm: '本当によろしいですか?' }, id: "app-delete-#{book.id}", method: :delete

@@ -21,8 +21,10 @@ class BooksTest < ActionDispatch::IntegrationTest
 
     assert_match 'いまさら翼といわれても', page.text
 
-    page.accept_confirm do
-      all(:link, '削除').last.trigger('click')
+    begin
+      find("#app-delete-#{Book.last.id}").click
+    rescue Capybara::Poltergeist::MouseEventFailed
+      find("#app-delete-#{Book.last.id}").trigger('click')
     end
 
     visit books_path

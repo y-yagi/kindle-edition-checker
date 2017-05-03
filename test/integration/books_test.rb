@@ -11,7 +11,9 @@ class BooksTest < ActionDispatch::IntegrationTest
   end
 
   test 'mangement book' do
-    assert_no_match 'いまさら翼といわれても', page.text
+    within('table.mdl-data-table') do
+      assert_no_match 'いまさら翼といわれても', page.text
+    end
 
     VCR.use_cassette('check_isbn_and_set_title') do
       click_link '登録'
@@ -19,11 +21,15 @@ class BooksTest < ActionDispatch::IntegrationTest
       click_button '登録'
     end
 
-    assert_match 'いまさら翼といわれても', page.text
+    within('table.mdl-data-table') do
+      assert_match 'いまさら翼といわれても', page.text
+    end
 
     all(:link, '削除').last.click
 
     visit books_path
-    assert_no_match 'いまさら翼といわれても', page.text
+    within('table.mdl-data-table') do
+      assert_no_match 'いまさら翼といわれても', page.text
+    end
   end
 end

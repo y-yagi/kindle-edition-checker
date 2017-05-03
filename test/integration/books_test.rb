@@ -25,7 +25,7 @@ class BooksTest < ActionDispatch::IntegrationTest
       assert_match 'いまさら翼といわれても', page.text
     end
 
-    all(:link, '削除').last.click
+    all(:link, '削除').last.trigger('click')
 
     assert_match '「いまさら翼といわれても」を削除しました', page.text
   end

@@ -27,9 +27,6 @@ class BooksTest < ActionDispatch::IntegrationTest
 
     all(:link, '削除').last.click
 
-    visit books_path
-    within('table.mdl-data-table') do
-      assert_no_match 'いまさら翼といわれても', page.text
-    end
+    assert_match '「いまさら翼といわれても」を削除しました', page.text
   end
 end

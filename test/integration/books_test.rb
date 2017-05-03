@@ -21,9 +21,7 @@ class BooksTest < ActionDispatch::IntegrationTest
 
     assert_match 'いまさら翼といわれても', page.text
 
-    page.accept_confirm do
-      all(:link, '削除').last.trigger('click')
-    end
+    all(:link, '削除').last.click
 
     visit books_path
     assert_no_match 'いまさら翼といわれても', page.text

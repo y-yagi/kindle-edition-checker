@@ -23,11 +23,10 @@ class BooksTest < ActionDispatch::IntegrationTest
 
     begin
       find("#app-delete-#{Book.last.id}").click
-    rescue Capybara::Poltergeist::MouseEventFailed
-      find("#app-delete-#{Book.last.id}").trigger('click')
+      visit books_path
+      assert_no_match 'いまさら翼といわれても', page.text
+    rescue => e
+      puts e.exception
     end
-
-    visit books_path
-    assert_no_match 'いまさら翼といわれても', page.text
   end
 end

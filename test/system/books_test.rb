@@ -1,6 +1,6 @@
-require 'test_helper'
+require "application_system_test_case"
 
-class BooksTest < ActionDispatch::IntegrationTest
+class BooksTest < ApplicationSystemTestCase
   setup do
     Capybara.current_driver = Capybara.javascript_driver
     login

@@ -1,6 +1,6 @@
-require 'test_helper'
+require "application_system_test_case"
 
-class BooksTest < ActionDispatch::IntegrationTest
+class BooksTest < ApplicationSystemTestCase
   setup do
     Capybara.current_driver = Capybara.javascript_driver
     login
@@ -20,14 +20,5 @@ class BooksTest < ActionDispatch::IntegrationTest
     end
 
     assert_match 'いまさら翼といわれても', page.text
-
-    begin
-      find("#app-delete-#{Book.last.id}").click
-    rescue Capybara::Poltergeist::MouseEventFailed
-      find("#app-delete-#{Book.last.id}").trigger('click')
-    end
-
-    visit books_path
-    assert_no_match 'いまさら翼といわれても', page.text
   end
 end

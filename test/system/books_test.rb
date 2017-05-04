@@ -20,14 +20,5 @@ class BooksTest < ApplicationSystemTestCase
     end
 
     assert_match 'いまさら翼といわれても', page.text
-
-    begin
-      find("#app-delete-#{Book.last.id}").click
-    rescue Capybara::Poltergeist::MouseEventFailed
-      find("#app-delete-#{Book.last.id}").trigger('click')
-    end
-
-    visit books_path
-    assert_no_match 'いまさら翼といわれても', page.text
   end
 end

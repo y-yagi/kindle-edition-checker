@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/y-yagi/sprockets.git
+  revision: 0260a4e655fe0ea6c5a419291fafa4573eaa0ed0
+  branch: fix_no_method_error
+  specs:
+    sprockets (4.0.0.beta5)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -207,9 +216,6 @@ GEM
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
-    sprockets (4.0.0.beta5)
-      concurrent-ruby (~> 1.0)
-      rack (> 1, < 3)
     sprockets-rails (3.2.1)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
@@ -273,14 +279,13 @@ DEPENDENCIES
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)
-  sprockets (~> 4.x)
+  sprockets (~> 4.x)!
   to_fixture
   turbolinks (~> 5)
   uglifier (>= 1.3.0)
   vcr
   web-console
   webmock
-
 
 RUBY VERSION
    ruby 2.4.1p111

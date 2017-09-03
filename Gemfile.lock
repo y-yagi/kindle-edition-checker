@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/y-yagi/sprockets.git
-  revision: 0260a4e655fe0ea6c5a419291fafa4573eaa0ed0
+  revision: a949bf8e0b243279e0dd940b9ec7a17921d56911
   branch: fix_no_method_error
   specs:
     sprockets (4.0.0.beta5)

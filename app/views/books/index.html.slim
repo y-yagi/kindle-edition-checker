@@ -14,18 +14,16 @@ h4.logo-font 登録した本の一覧
           th.mdl-data-table__cell--non-numeric = attributes_t('book.isbn_10')
           th.mdl-data-table__cell--non-numeric = attributes_t('book.has_kindle_edition')
           th.mdl-data-table__cell--non-numeric = attributes_t('book.kindle_edition_release_date')
-          th.mdl-data-table__cell--non-numeric Amazonの書籍ページへのリンク
           th
 
       tbody
         - @books.each do |book|
           tr
-            td = book.title
+            td = link_to book.title, book.amazon_url, target: '_blank'
             td = book.release_date
             td = book.isbn_10
             td
               i.material-icons.md-dark
                 = book.has_kindle_edition_icon
             td = book.kindle_edition_release_date
-            td = link_to book.title, book.amazon_url, target: '_blank'
             td = link_to '削除', book, data: { confirm: '本当によろしいですか?' }, id: "app-delete-#{book.id}", method: :delete

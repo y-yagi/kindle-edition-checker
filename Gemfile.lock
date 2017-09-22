@@ -104,7 +104,7 @@ GEM
     mini_portile2 (2.2.0)
     minitest (5.10.3)
     minitest-sub_test_case (0.1.0)
-    multi_json (1.12.1)
+    multi_json (1.12.2)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     netrc (0.11.0)
@@ -177,7 +177,7 @@ GEM
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
     retryable (2.0.4)
-    rollbar (2.15.1)
+    rollbar (2.15.2)
       multi_json
     ruby-hmac (0.4.0)
     ruby-pushbullet (0.1.4)
@@ -280,6 +280,7 @@ DEPENDENCIES
   vcr
   web-console
   webmock
+
 
 RUBY VERSION
    ruby 2.4.1p111

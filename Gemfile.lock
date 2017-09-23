@@ -101,7 +101,7 @@ GEM
     method_source (0.8.2)
     mime-types (2.99.3)
     mini_mime (0.1.4)
-    mini_portile2 (2.2.0)
+    mini_portile2 (2.3.0)
     minitest (5.10.3)
     minitest-sub_test_case (0.1.0)
     multi_json (1.12.2)
@@ -109,8 +109,8 @@ GEM
     multipart-post (2.0.0)
     netrc (0.11.0)
     nio4r (2.1.0)
-    nokogiri (1.8.0)
-      mini_portile2 (~> 2.2.0)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
     oauth (0.5.3)
     oauth2 (1.4.0)
       faraday (>= 0.8, < 0.13)
@@ -259,6 +259,7 @@ DEPENDENCIES
   fcm
   listen (~> 3.0.5)
   minitest-sub_test_case
+  nokogiri (>= 1.8.1)
   omniauth
   omniauth-google-oauth2
   omniauth-twitter
@@ -281,9 +282,7 @@ DEPENDENCIES
   web-console
   webmock
 
-
 RUBY VERSION
    ruby 2.4.1p111
-
 BUNDLED WITH
    1.15.1

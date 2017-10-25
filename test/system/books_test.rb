@@ -2,12 +2,7 @@ require "application_system_test_case"
 
 class BooksTest < ApplicationSystemTestCase
   setup do
-    Capybara.current_driver = Capybara.javascript_driver
     login
-  end
-
-  teardown do
-    Capybara.current_driver = Capybara.default_driver
   end
 
   test 'mangement book' do

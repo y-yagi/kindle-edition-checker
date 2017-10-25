@@ -35,9 +35,11 @@ group :development do
 end
 
 group :test do
-  gem 'poltergeist'
   gem 'minitest-sub_test_case'
   gem 'vcr'
   gem 'webmock'
+  gem 'capybara'
+  gem 'chromedriver-helper'
+  gem 'selenium-webdriver'
 end
 gem 'nokogiri', '>= 1.8.1'

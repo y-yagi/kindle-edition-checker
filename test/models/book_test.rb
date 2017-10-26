@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class BookTest < ActiveSupport::TestCase
+  setup do
+    stub_request(:get, /webservices\.amazon\.co\.jp\.*/)
+      .to_return(body: file_fixture("ecs-response.xml"))
+  end
+
   sub_test_case('validation') do
     test 'should have the necessary required validators' do
       book = Book.new(user: users(:google))
@@ -26,9 +31,9 @@ class BookTest < ActiveSupport::TestCase
 
   test 'set title and release date when saved' do
     book = Book.new(isbn_10: '4041047617', user: users(:google))
-    VCR.use_cassette('check_isbn_and_set_title') { book.save! }
+    book.save!
     assert_equal 'いまさら翼といわれても', book.title
-    assert_equal Date.parse("2016-11-30"), book.release_date
+    assert_equal Date.parse("2016-11-26"), book.release_date
   end
 
   test 'set_kindle_edition_info set kindle info' do
@@ -36,7 +41,7 @@ class BookTest < ActiveSupport::TestCase
     assert_not book.has_kindle_edition
     assert_not book.kindle_edition_release_date
 
-    VCR.use_cassette('set_kindle_edition_info') { book.set_kindle_edition_info! }
+    book.set_kindle_edition_info!
 
     book.reload
     assert book.has_kindle_edition

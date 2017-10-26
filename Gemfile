@@ -37,7 +37,6 @@ end
 group :test do
   gem 'poltergeist'
   gem 'minitest-sub_test_case'
-  gem 'vcr'
   gem 'webmock'
 end
 gem 'nokogiri', '>= 1.8.1'

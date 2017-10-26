@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2013-08-01">
+  <OperationRequest>
+    <HTTPHeaders>
+      <Header Name="UserAgent" Value="curl/7.47.0">
+      </Header>
+    </HTTPHeaders>
+    <RequestId>99eaa0de-3f58-489d-8988-36c0f9e03a90</RequestId>
+    <Arguments>
+    </Arguments>
+    <RequestProcessingTime>0.0196057160000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemLookupRequest>
+        <IdType>ASIN</IdType>
+        <ItemId>4832247697</ItemId>
+        <ResponseGroup>ItemAttributes</ResponseGroup>
+        <ResponseGroup>AlternateVersions</ResponseGroup>
+        <VariationPage>All</VariationPage>
+      </ItemLookupRequest>
+    </Request>
+    <Item>
+      <ASIN>4832247697</ASIN>
+      <ItemAttributes>
+        <Author>蒼樹 うめ</Author>
+        <Binding>コミック</Binding>
+        <EAN>9784832247697</EAN>
+        <EANList>
+          <EANListElement>9784832247697</EANListElement>
+        </EANList>
+        <IsAdultProduct>0</IsAdultProduct>
+        <ISBN>4832247697</ISBN>
+        <Label>芳文社</Label>
+        <Languages>
+          <Language>
+            <Name>日本語</Name>
+            <Type>Published</Type>
+          </Language>
+        </Languages>
+        <Manufacturer>芳文社</Manufacturer>
+        <NumberOfPages>120</NumberOfPages>
+        <PackageDimensions>
+          <Height Units="100分の1インチ">47</Height>
+          <Length Units="100分の1インチ">819</Length>
+          <Weight Units="100分の1ポンド">62</Weight>
+          <Width Units="100分の1インチ">583</Width>
+        </PackageDimensions>
+        <ProductGroup>Book</ProductGroup>
+        <ProductTypeName>ABIS_BOOK</ProductTypeName>
+        <PublicationDate>2016-11-26</PublicationDate>
+        <Publisher>芳文社</Publisher>
+        <ReleaseDate>2016-11-26</ReleaseDate>
+        <Studio>芳文社</Studio>
+        <Title>いまさら翼といわれても</Title>
+      </ItemAttributes>
+      <AlternateVersions>
+        <AlternateVersion>
+          <ASIN>B01MSQQS2O</ASIN>
+          <Title>いまさら翼といわれても</Title>
+          <Binding>Kindle版</Binding>
+        </AlternateVersion>
+      </AlternateVersions>
+    </Item>
+  </Items>
+</ItemLookupResponse>

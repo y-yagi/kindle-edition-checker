@@ -4,6 +4,8 @@ require 'rails/test_help'
 require 'webmock/minitest'
 require 'capybara/rails'
 
+WebMock.disable_net_connect!(allow_localhost: true)
+
 class ActiveSupport::TestCase
   fixtures :all
 end
@@ -24,13 +26,4 @@ class ActionDispatch::IntegrationTest
   def login
     visit '/auth/google_oauth2'
   end
-end
-
-VCR.configure do |config|
-  config.cassette_library_dir = 'test/vcr_cassettes'
-  config.hook_into :webmock
-  config.allow_http_connections_when_no_cassette = true
-  config.default_cassette_options = {
-    match_requests_on: [:method, :host, :path]
-  }
 end

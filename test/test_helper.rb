@@ -15,15 +15,3 @@ OmniAuth.config.add_mock(:google_oauth2,
   'uid' => '1',
   'provider' => 'google_oauth2',
 )
-
-class ActionDispatch::IntegrationTest
-  fixtures :all
-  include Capybara::DSL
-
-  require 'capybara/poltergeist'
-  Capybara.javascript_driver = :poltergeist
-
-  def login
-    visit '/auth/google_oauth2'
-  end
-end

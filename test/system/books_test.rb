@@ -5,12 +5,7 @@ class BooksTest < ApplicationSystemTestCase
     stub_request(:get, /webservices\.amazon\.co\.jp\.*/)
       .to_return(body: file_fixture("ecs-response.xml"))
 
-    Capybara.current_driver = Capybara.javascript_driver
     login
-  end
-
-  teardown do
-    Capybara.current_driver = Capybara.default_driver
   end
 
   test 'mangement book' do

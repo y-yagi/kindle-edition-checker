@@ -7,14 +7,3 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     visit '/auth/google_oauth2'
   end
 end
-
-module ActionDispatch::SystemTesting::TestHelpers::ScreenshotHelper
-  def take_screenshot
-    save_image
-    open_image
-  end
-
-  def open_image
-    system("xdg-open #{image_path}")
-  end
-end

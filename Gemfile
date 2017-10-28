@@ -40,5 +40,6 @@ group :test do
   gem 'capybara'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+  gem 'screenshot_opener'
 end
 gem 'nokogiri', '>= 1.8.1'

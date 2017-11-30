@@ -4,7 +4,7 @@ ruby "2.4.1"
 
 gem 'active_decorator'
 gem 'amazon-ecs'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '5.2.0.beta2'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'

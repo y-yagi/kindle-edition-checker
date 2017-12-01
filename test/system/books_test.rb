@@ -15,6 +15,6 @@ class BooksTest < ApplicationSystemTestCase
     fill_in 'book_isbn_10', with: '4041047617'
     click_button '登録'
 
-    assert_match 'いまさら翼といわれても', page.text
+    assert_text "いまさら翼といわれても"
   end
 end

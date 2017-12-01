@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module KindleChecker
   class Application < Rails::Application
-    config.load_defaults "5.1"
+    config.load_defaults "5.2"
     config.generators do |g|
       g.assets false
       g.helper false

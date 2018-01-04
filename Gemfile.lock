@@ -115,7 +115,7 @@ GEM
     mime-types (2.99.3)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
-    minitest (5.11.1)
+    minitest (5.10.3)
     minitest-sub_test_case (0.1.0)
     multi_json (1.12.2)
     multi_xml (0.6.0)
@@ -276,6 +276,7 @@ DEPENDENCIES
   dotenv-rails
   fcm
   listen (~> 3.0.5)
+  minitest (~> 5.10.0)
   minitest-sub_test_case
   nokogiri (>= 1.8.1)
   omniauth
@@ -300,9 +301,8 @@ DEPENDENCIES
   web-console
   webmock
 
-
 RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

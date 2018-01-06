@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.4.1"
+ruby '2.4.1'
 
 gem 'active_decorator'
 gem 'amazon-ecs'
@@ -35,6 +35,7 @@ group :development do
 end
 
 group :test do
+  gem 'minitest', '~> 5.10.0'
   gem 'minitest-sub_test_case'
   gem 'webmock'
   gem 'capybara'

@@ -1,5 +1,5 @@
 language: ruby
-sudo: false
+sudo: true
 dist: trusty
 rvm:
   - 2.4.1
@@ -16,6 +16,5 @@ before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database database_test' -U postgres
   - bundle update
-  - bundle exec chromedriver-update 2.34
 addons:
   chrome: stable

@@ -90,7 +90,7 @@ GEM
     fcm (0.0.2)
       httparty
       json
-    ffi (1.9.21)
+    ffi (1.9.22)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashdiff (0.3.7)

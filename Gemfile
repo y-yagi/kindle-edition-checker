@@ -44,3 +44,4 @@ group :test do
   gem 'screenshot_opener'
 end
 gem 'nokogiri', '>= 1.8.1'
+gem 'loofah', '>= 2.2.1'

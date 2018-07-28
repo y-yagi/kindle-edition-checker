@@ -85,4 +85,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.delivery_method = :sparkpost
+
+  config.x.notification.click_action = "http://kindle-edition-checker.herokuapp.com//books"
 end

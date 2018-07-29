@@ -6,7 +6,9 @@ class Settings::NotificationsController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    update_params = user_params
+    update_params.extract!(:pushbullet_api_token) if update_params[:pushbullet_api_token] == @user.maskd_pushbullet_api_token
+    if @user.update(update_params)
       redirect_to settings_notifications_url
     else
       render :index

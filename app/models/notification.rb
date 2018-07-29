@@ -9,7 +9,7 @@ class Notification
 
       users.each do |user|
         if user.browser_notification
-          response = firebase.send([user.browser_subscription_id])
+          response = firebase.send(user)
           Rollbar.error(response) if response[:response] != 'success'
         end
 

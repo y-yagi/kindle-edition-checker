@@ -6,4 +6,8 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   def login
     visit '/auth/google_oauth2'
   end
+
+  def login_user
+    @login_user ||= User.find_by!(uid: 1, provider: 'google_oauth2')
+  end
 end

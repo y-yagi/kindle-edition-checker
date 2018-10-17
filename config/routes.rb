@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'index#index'
 
-  resources :books
+  resources :books do
+    post :import, to: 'books/import#create', on: :collection
+  end
 
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/auth/:provider/callback', to: 'sessions#create'

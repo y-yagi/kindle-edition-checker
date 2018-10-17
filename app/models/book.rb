@@ -7,8 +7,7 @@ class Book < ApplicationRecord
 
   class << self
     def build(params, current_user)
-      book = Book.new(params)
-      book.user = current_user
+      book = Book.find_or_initialize_by(params.merge(user: current_user))
       book
     end
 

@@ -4,7 +4,7 @@ ruby '2.5.1'
 
 gem 'active_decorator'
 gem 'amazon-ecs'
-gem 'rails', '5.2.1'
+gem 'rails', '>= 5.2.1.1'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
@@ -43,3 +43,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'screenshot_opener'
 end
+gem 'activestorage', '>= 5.2.1.1'
+gem 'loofah', '>= 2.2.3'

@@ -4,7 +4,7 @@ ruby '2.6.0'
 
 gem 'active_decorator'
 gem 'amazon-ecs'
-gem 'rails', '>= 5.2.0'
+gem 'rails', '>= 6.0.0.beta3'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
@@ -18,7 +18,6 @@ gem 'retryable'
 gem 'slim-rails'
 gem 'sprockets', '4.0.0.beta8'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 
 group :development, :test do
